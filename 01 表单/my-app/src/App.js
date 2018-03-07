@@ -20,7 +20,7 @@ class App extends Component {
             checkedSex:true,
             checkedColor:'red',
             checkedHero:["圣枪游侠"],
-            age:"影流之主",
+            age:20,
             text:''
 		}
 
@@ -101,7 +101,6 @@ class App extends Component {
             })
         }
     }
-    //下拉菜单选择
     selectAge(event){
         console.log(event.target.value)
         this.setState({
@@ -119,16 +118,17 @@ class App extends Component {
                     绑定样式
                 </div>
 
+
                 <h2>1.input 输入框</h2>
                 {/*
-                 一类是受控表单，如果想要改变，需要满足以下条件
-                 1.必须提供一个状态，并通过value进行绑定
-                 2.必须提供onChange来改变状态,onChange = 的必须是一个函数
-                 可以通过1和2来实现双向数据绑定和表单验证
                  在react中所有表单元素都进行了特殊处理
                  在react中，input表单分为两类：
 
-                 第
+                 第一类是受控表单，如果想要改变，需要满足以下条件
+                 1.必须提供一个状态，并通过value进行绑定
+                 2.必须提供onChange来改变状态,onChange = 的必须是一个函数
+                 可以通过1和2来实现双向数据绑定和表单验证
+
                  第二类是非受控表单   没有value属性  非受控表单可以正常输入内容，也可以绑定onChange事件
                  */}
                 <input type="text" value={this.state.name} onChange={this.inputName}/>
@@ -189,64 +189,28 @@ class App extends Component {
                 </div>
                 <h2>4.下拉菜单</h2>
                 <div>
-                    请表明你想玩的英雄？
+                    请选择你的年龄？
                     <select value={this.state.age} onChange={this.selectAge}>
-                        <option value="影流之主">影流之主</option>
-                        <option value="暗影之拳">暗影之拳</option>
-                        <option value="暴走萝莉">暴走萝莉</option>
-                        <option value="魔蛇之拥">魔蛇之拥</option>
-                        <option value="蜘蛛女皇">蜘蛛女皇</option>
-                        <option value="沙漠皇帝">沙漠皇帝</option>
-                        <option value="复仇之矛">复仇之矛</option>
-                        <option value="麦林炮手">麦林炮手</option>
-                        <option value="瘟疫之源">瘟疫之源</option>
-                        <option value="深渊巨口">深渊巨口</option>
-                        <option value="虚空恐惧">虚空恐惧</option>
-                        <option value="荒漠屠夫">荒漠屠夫</option>
-                        <option value="机械先驱">机械先驱</option>
-                        <option value="刀锋之影">刀锋之影</option>
-                        <option value="黑暗之女">黑暗之女</option>
-                        <option value="暗裔剑魔">暗裔剑魔</option>
-                        <option value="刀锋意志">刀锋意志</option>
-                        <option value="无双剑姬">无双剑姬</option>
-                        <option value="海兽祭祀">海兽祭祀</option>
-                        <option value="战争之王">战争之王</option>
-                        <option value="首领之傲">首领之傲</option>
-                        <option value="炼金术士">炼金术士</option>
-                        <option value="雷霆咆哮">雷霆咆哮</option>
-                        <option value="沙漠死神">沙漠死神</option>
-                        <option value="齐天大圣">齐天大圣</option>
-                        <option value="龙血武姬">龙血武姬</option>
-                        <option value="扭曲树精">扭曲树精</option>
-                        <option value="巨魔之王">巨魔之王</option>
-                        <option value="深渊泰坦">深渊泰坦</option>
-                        <option value="无畏战车">无畏战车</option>
-                        <option value="亡灵战神">亡灵战神</option>
-                        <option value="迷失之牙">迷失之牙</option>
-                        <option value="山隐之焰">山隐之焰</option>
-                        <option value="暴怒骑士">暴怒骑士</option>
-                        <option value="武器大师">武器大师</option>
-                        <option value="祖安狂人">祖安狂人</option>
-                        <option value="蛮族之王">蛮族之王</option>
-                        <option value="圣毅之锤">圣毅之锤</option>
-                        <option value="海洋之灾">海洋之灾</option>
-                        <option value="暮光之眼">暮光之眼</option>
-                        <option value="熔岩巨兽">熔岩巨兽</option>
-                        <option value="狂暴之心">狂暴之心</option>
-                        <option value="铁铠冥魂">铁铠冥魂</option>
-                        <option value="战争之影">战争之影</option>
-                        <option value="无极剑圣">无极剑圣</option>
-                        <option value="北地之怒">北地之怒</option>
-                        <option value="水晶先锋">水晶先锋</option>
-                        <option value="生化魔人">生化魔人</option>
-                        <option value="兽灵行者">兽灵行者</option>
-                        <option value="祖安怒兽">祖安怒兽</option>
-                        <option value="影流之镰">影流之镰</option>
-                        <option value="末日使者">末日使者</option>
-                        <option value="德邦总管">德邦总管</option>
+                        {/*option[value=$]{$}*30*/}
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
                     </select>
                     <br/>
-                    您选择的英雄是：{this.state.age}
+                    你选择的年龄是：{this.state.age}岁
                 </div>
                 <h2>5.文本框</h2>
                 <textarea cols="100" rows="5" value={this.state.text} onChange={
