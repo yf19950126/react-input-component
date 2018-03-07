@@ -31,6 +31,7 @@ class App extends Component {
         this.selectColor = this.selectColor.bind(this)
         this.selectHero = this.selectHero.bind(this)
         this.selectAge = this.selectAge.bind(this)
+        this.selectText = this.selectText.bind(this)
 	}
 	//输入用户名的函数
 	inputName(event) {
@@ -101,10 +102,18 @@ class App extends Component {
             })
         }
     }
+    //选择年龄
     selectAge(event){
         console.log(event.target.value)
         this.setState({
             age:event.target.value
+        })
+    }
+    //选择文本
+    selectText(event){
+        console.log(event.target.value)
+        this.setState({
+            text:event.target.value
         })
     }
 	render() {
@@ -213,13 +222,18 @@ class App extends Component {
                     你选择的年龄是：{this.state.age}岁
                 </div>
                 <h2>5.文本框</h2>
-                <textarea cols="100" rows="5" value={this.state.text} onChange={
-                    (event)=>{
-                    this.setState({
-                        text:event.target.value
-                    })
-                  }
-                }>
+                {/*<textarea cols="100" rows="5" value={this.state.text} onChange={*/}
+                    {/*(event)=>{*/}
+                    {/*this.setState({*/}
+                        {/*text:event.target.value*/}
+                    {/*})*/}
+                  {/*}*/}
+                {/*}>*/}
+
+                {/*</textarea>*/}
+                {/*<br/>*/}
+                {/*您输入的内容是：{this.state.text}*/}
+                <textarea cols="100" rows="5" value={this.state.text} onChange={this.selectText}>
 
                 </textarea>
                 <br/>
